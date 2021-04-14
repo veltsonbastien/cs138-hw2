@@ -1,0 +1,13 @@
+alphabet: {k,d,o,r,w,c}
+start: startState
+accepting: {open, read, write, close, kreate, delete}
+
+startState (k->kreate) (d->delete) (o->open) (_->errState)
+errState (_->errState) 
+kreate (o->open) (c->close) (d->delete) (_->errState) 
+delete (k->kreate) (_->errState) 
+open (r->read) (w->write) (c->close) (_->errState)
+read (w->write) (c->close) (_->errState)
+write (r->read) (c->close) (_->errState)
+close (o->open) (k->kreate) (d->delete) (_->errState) 
+
