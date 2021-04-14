@@ -1,0 +1,13 @@
+alphabet: {0,1}
+start: startState
+accepting: {subCheckGood, length44}
+
+startState ( 0->subCheck) (0->length41) (1->length41) 
+length41 ( 0->subCheck) (0->length42) (1->length42)
+length42 ( 0->subCheck) (0->length43) (1->length43)
+length43 ( 0->subCheck) (0->length44) (1->length44)
+length44 ( 0->subCheck) (1->cont) 
+cont     ( 0->subCheck) (1->cont)
+subCheck ( 1->subCheckGood) (0->cont) 
+subCheckGood (0->subCheckGood) (1->subCheckGood)
+
