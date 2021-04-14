@@ -1,0 +1,10 @@
+alphabet: {0,1}
+start: div23
+accepting: {div23, div2, div2c, div3}
+
+div23 (0->div0) (1->div0) 
+div0  (0->div2) (1->div2)
+div2  (0->div3) (1->div3)  
+div3  (0->div2c) (1->div2c)
+div2c (0->div0c) (1->div0c)
+div0c (0->div23) (1->div23)
